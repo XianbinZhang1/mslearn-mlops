@@ -51,7 +51,7 @@ def create_or_update_deployment(
     endpoint_name: str,
     deployment_name: str,
 ) -> ManagedOnlineDeployment:
-    model = ml_client.models.get(name="diabetes-model", version="1")
+    model = ml_client.models.get(name="diabetes-model", version="2")
 
     deployment = ManagedOnlineDeployment(
         name=deployment_name,
