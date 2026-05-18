@@ -51,11 +51,7 @@ def create_or_update_deployment(
     endpoint_name: str,
     deployment_name: str,
 ) -> ManagedOnlineDeployment:
-    model = Model(
-        path="./model",
-        type=AssetTypes.MLFLOW_MODEL,
-        description="MLflow diabetes classification model",
-    )
+    model = ml_client.models.get(name="diabetes-model", version="1")
 
     deployment = ManagedOnlineDeployment(
         name=deployment_name,
